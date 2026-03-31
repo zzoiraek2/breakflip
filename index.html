@@ -197,6 +197,10 @@
 
     .topic-name{font-size:20px;font-weight:900;line-height:1.35;letter-spacing:-.02em}
     .topic-desc{font-size:14px;color:#7b8493;line-height:1.55;margin-top:6px;font-weight:800}
+    .topic-date-meta{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:8px;font-size:12px;line-height:1.5;font-weight:800;color:#8b95a7}
+    .topic-date-meta .date-item{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+    .topic-date-meta .date-label{opacity:.72}
+    .topic.note-colored .topic-date-meta{color:var(--note-text,#111827) !important;opacity:.72}
     .meta-row,.pills,.toggle-row,.pack-list,.nav-row{display:flex;gap:8px;flex-wrap:wrap}
     .badge,.pill,.pack-btn,.chip{padding:8px 13px;border-radius:999px;font-size:13px;font-weight:900;line-height:1.2;white-space:nowrap}
     .badge{background:#f4f4f5;color:#4b5563}
@@ -2196,13 +2200,18 @@ luggage claim\t수하물 찾는 곳`, '준호')
   function importReceivedNote(receivedId){
     const received = receivedNotes().find(n => n.id === receivedId);
     if(!received){ showToast('공유받은 노트를 찾지 못했습니다.'); return null; }
+
+    const importedAt = now();
     const imported = {
       id: uid(),
       sourceReceivedId: received.id,
-      name: `${received.name} (공유)`,
+      sourceNoteId: received.sourceNoteId || received.id,
+      ownerName: received.ownerName || '친구',
+      name: received.name,
       category: received.category || '공유 노트',
       description: received.description || `${received.ownerName || '친구'} 님이 공유한 노트`,
-      createdAt: now(),
+      createdAt: importedAt,
+      updatedAt: importedAt,
       testsDone: 0,
       remindCount: 0,
       lastRemindAtTestCount: 0,
@@ -2210,6 +2219,14 @@ luggage claim\t수하물 찾는 곳`, '준호')
       donePackIndex: 0,
       packViewType: 'active',
       favorite: false,
+      locked: false,
+      noteColor: NOTE_DEFAULT_COLOR_ID,
+      dailyStudy:{day:1, loopCount:0, lastCompletedDate:'', startedDate:'', phase:'idle'},
+      season:{
+        current:1, status:'ready', goalRate:50, packSize:10, maxPacks:10, guardSec:3,
+        sessionCount:0, newPackCursor:0, sessionCardIds:[],
+        startedAt:null, clearedAt:null, history:[]
+      },
       cards: (received.cards || []).map(c => makeCard(c.word, c.meaning))
     };
     state.notes.unshift(imported);
@@ -3134,6 +3151,16 @@ luggage claim\t수하물 찾는 곳`, '준호')
     note.updatedAt = now();
   }
 
+  function formatNoteMetaDate(ts){
+    if(!ts) return '-';
+    const date = new Date(ts);
+    if(Number.isNaN(date.getTime())) return '-';
+    const yyyy = date.getFullYear();
+    const mm = String(date.getMonth() + 1).padStart(2, '0');
+    const dd = String(date.getDate()).padStart(2, '0');
+    return `${yyyy}.${mm}.${dd}`;
+  }
+
   function noteTimestampForSort(note, key){
     if(key === 'updatedAt') return note.updatedAt || note.receivedAt || note.createdAt || 0;
     return note.createdAt || note.receivedAt || note.updatedAt || 0;
@@ -3257,7 +3284,7 @@ luggage claim\t수하물 찾는 곳`, '준호')
           <div class="topic-top">
             <div class="topic-top-main">
               <div class="topic-name">${escapeHtml(note.name)}</div>
-              <div class="topic-desc">${escapeHtml(note.ownerName || '친구')} 님이 공유 · ${escapeHtml(note.description || note.category || '공유 노트')}</div>
+              <div class="topic-desc">${escapeHtml(note.ownerName || '친구')} 님이 공유</div>
             </div>
             <div class="topic-top-right">
               <div class="meta-row" style="display:flex;justify-content:flex-end;gap:6px;">
@@ -3273,7 +3300,7 @@ luggage claim\t수하물 찾는 곳`, '준호')
           </div>
           <div class="shared-note-actions">
             <button data-shared-view="${note.id}">노트 보기</button>
-            <button data-shared-test="${note.id}">테스팅</button>
+            <button data-shared-import="${note.id}">내 노트 등록</button>
           </div>`;
         wrap.appendChild(div);
       });
@@ -3288,11 +3315,21 @@ luggage claim\t수하물 찾는 곳`, '준호')
         renderHome();
         openSharedNoteViewer(shared.id);
       }));
-      wrap.querySelectorAll('[data-shared-test]').forEach(btn => btn.addEventListener('click', () => {
-        profile().selectedSharedNoteId = btn.dataset.sharedTest;
+      wrap.querySelectorAll('[data-shared-import]').forEach(btn => btn.addEventListener('click', () => {
+        const sharedId = btn.dataset.sharedImport;
+        profile().selectedSharedNoteId = sharedId;
         save();
         renderHome();
-        startSharedReview(btn.dataset.sharedTest);
+        const shared = receivedNotes().find(n => n.id === sharedId);
+        if(!shared){
+          showToast('공유받은 노트를 찾지 못했습니다.');
+          return;
+        }
+        const ok = window.confirm(`"${shared.name}" 노트를 내 노트에 등록하시겠습니까?`);
+        if(!ok) return;
+        const imported = importReceivedNote(sharedId);
+        if(!imported) return;
+        showToast(`"${shared.name}" 노트를 내 노트에 등록했어요.`);
       }));
       wrap.querySelectorAll('[data-note-menu]').forEach(btn => btn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -3332,7 +3369,13 @@ luggage claim\t수하물 찾는 곳`, '준호')
             <div class="topic-title-block">
               <div class="topic-name">${escapeHtml(note.name)}${note.locked ? ' 🔒' : ''}</div>
               <div class="topic-favorite-state ${note.favorite ? 'on' : 'off'}" aria-label="즐겨찾기 상태">${note.favorite ? '★' : '☆'}</div>
-              <div class="topic-desc">${escapeHtml(note.category)}</div>
+              <div>
+                <div class="topic-desc">${escapeHtml(note.category)}</div>
+                <div class="topic-date-meta">
+                  <span class="date-item"><span class="date-label">생성</span><span>${formatNoteMetaDate(note.createdAt)}</span></span>
+                  <span class="date-item"><span class="date-label">수정</span><span>${formatNoteMetaDate(note.updatedAt || note.createdAt)}</span></span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="topic-top-right">
@@ -4914,24 +4957,7 @@ luggage claim\t수하물 찾는 곳`, '준호')
     box.querySelectorAll('[data-share-reject]').forEach(btn => btn.addEventListener('click', () => rejectShareRequest(btn.dataset.shareReject)));
   }
 
-function renderThemeGrid(){
-    const p = profile();
-    $("themeGrid").innerHTML = p.ownedThemes.map(theme => `
-      <div class="theme-item ${p.theme===theme?'active':''}" data-theme-item="${theme}">
-        <div class="theme-item-main">
-          <div class="theme-preview ${theme}"></div>
-          <div class="theme-name">${theme==='ocean'?'오션 블루':theme==='forest'?'포레스트': '선셋 오렌지'}</div>
-        </div>
-        <div class="theme-state">${p.theme===theme ? '적용중' : '선택'}</div>
-      </div>`).join('');
-    $("themeGrid").querySelectorAll('[data-theme-item]').forEach(el => el.addEventListener('click', () => {
-      profile().theme = el.dataset.themeItem;
-      applyTheme();
-      save();
-      renderProfile();
-      showToast('테마를 적용했습니다.');
-    }));
-  }
+
 
 
   function recipientsForShare(type){
