@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"
+  />
+  <title>비움 모바일 인트로</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    :root {
+      --bg: #444b66;
+      --text: rgba(255,255,255,0.96);
+      --subtext: rgba(255,255,255,0.84);
+      --phone-width: 430px;
+    }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #222638;
+      font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .app-shell {
+      position: relative;
+      width: 100%;
+      max-width: var(--phone-width);
+      height: 100dvh;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    @media (min-width: 431px) {
+      .app-shell {
+        height: min(100dvh, 932px);
+        border-radius: 28px;
+        box-shadow: 0 24px 80px rgba(0,0,0,0.34);
+      }
+    }
+
+    .stage {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: var(--bg);
+      isolation: isolate;
+    }
+
+    .logo-wrap {
+      position: absolute;
+      left: 50%;
+      top: 44%;
+      width: 56vw;
+      height: 56vw;
+      max-width: 240px;
+      max-height: 240px;
+      min-width: 84px;
+      min-height: 84px;
+      transform: translate(-50%, -50%) scale(0.1);
+      transform-origin: center center;
+      opacity: 0;
+      animation: logoFullMotion 6.1s cubic-bezier(.2,.8,.2,1) forwards;
+      will-change: transform, opacity, filter;
+      z-index: 2;
+    }
+
+    .logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+      filter: drop-shadow(0 12px 26px rgba(0,0,0,0.18));
+    }
+
+    .caption {
+      position: absolute;
+      left: 50%;
+      bottom: max(25%, calc(env(safe-area-inset-bottom) + 96px));
+      width: min(84%, 320px);
+      transform: translateX(-50%);
+      text-align: center;
+      color: var(--text);
+      opacity: 0;
+      animation:
+        captionIn 0.55s ease-out 1s forwards,
+        captionOut 0.55s ease-in 3s forwards;
+      will-change: transform, opacity, filter;
+      z-index: 3;
+    }
+
+    .caption-title {
+      margin: 0 0 8px 0;
+      font-size: clamp(22px, 6.2vw, 30px);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      word-break: keep-all;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.14);
+    }
+
+    .caption-desc {
+      margin: 0;
+      font-size: clamp(13px, 3.7vw, 16px);
+      line-height: 1.6;
+      color: var(--subtext);
+      word-break: keep-all;
+      text-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+
+    .fade-wash {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at center,
+          rgba(68,75,102,0) 0%,
+          rgba(68,75,102,0) 44%,
+          rgba(68,75,102,0.10) 62%,
+          rgba(68,75,102,0.36) 80%,
+          rgba(68,75,102,0.96) 100%);
+      opacity: 0;
+      animation: washIn 1.4s ease-out 3.25s forwards;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    @keyframes logoFullMotion {
+      0% {
+        transform: translate(-50%, -50%) scale(0.1);
+        opacity: 0;
+        filter: blur(0px);
+      }
+      15% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        filter: blur(0px);
+      }
+      58% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        filter: blur(0px);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(3.2);
+        opacity: 0;
+        filter: blur(16px);
+      }
+    }
+
+    @keyframes captionIn {
+      from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+        filter: blur(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+        filter: blur(0px);
+      }
+    }
+
+    @keyframes captionOut {
+      from {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+        filter: blur(0px);
+      }
+      to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-8px);
+        filter: blur(8px);
+      }
+    }
+
+    @keyframes washIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @media (max-width: 360px) {
+      .logo-wrap {
+        width: 52vw;
+        height: 52vw;
+        min-width: 76px;
+        min-height: 76px;
+      }
+
+      .caption {
+        bottom: max(16%, calc(env(safe-area-inset-bottom) + 78px));
+        width: 86%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <div class="stage">
+      <div class="logo-wrap">
+        <img class="logo" src="https://zzoiraek2.github.io/breakflip/%EB%B9%84%EC%9B%80-removebg-preview_up.png" alt="비움 로고" />
+      </div>
+
+      <div class="caption">
+        <div class="caption-title">뇌과학 기반 실전 학습 시스템</div>
+        <div class="caption-desc">
+          "아는 건 제거하고, 모르는 것만 집중한다."<br>
+          "반복이 아니라, 소거로 완성한다."<br>
+          "끝까지 남은 것만 보면, 암기는 끝난다."
+        </div>
+      </div>
+
+      <div class="fade-wash"></div>
+    </div>
+  </div>
+</body>
+</html>
