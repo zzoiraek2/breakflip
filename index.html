@@ -262,6 +262,14 @@
     .tag{padding:7px 11px;border-radius:999px;font-size:13px;line-height:1.2;font-weight:900}.tag.red{background:var(--red-soft);color:#b91c1c}.tag.amber{background:var(--amber-soft);color:#b45309}.tag.green{background:var(--green-soft);color:#047857}
     .empty{background:#fff;border:1px dashed #dbe3ef;border-radius:20px;padding:30px 18px;text-align:center;color:#64748b;font-size:15px;line-height:1.7}
     .review-card{padding:10px 14px 14px;position:relative;overflow:hidden}.review-card::before{display:none}.idx{font-size:14px;color:var(--muted);font-weight:900;margin-bottom:12px;display:none}
+    .review-card.remind-mode{background:linear-gradient(180deg,#EEF1FF 0%,#F8FAFF 100%);border-color:rgba(92,106,196,.28);box-shadow:0 18px 42px rgba(92,106,196,.16), inset 0 1px 0 rgba(255,255,255,.96)}
+    .review-card.remind-mode .word-box{background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(238,241,255,.96));border-color:rgba(92,106,196,.22)}
+    .review-card.remind-mode .word-badge{background:rgba(92,106,196,.12);border-color:rgba(92,106,196,.18);color:#4C5BB2}
+    .review-card.remind-mode .recall-header{color:#4C5BB2}
+    .review-card.remind-mode .peek-wrap{background:rgba(255,255,255,.82);border-color:rgba(92,106,196,.16)}
+    [data-colormode="dark"] .review-card.remind-mode{background:linear-gradient(180deg,#1B2140 0%,#151A31 100%) !important;border-color:#41518E !important;box-shadow:0 18px 42px rgba(0,0,0,.34)}
+    [data-colormode="dark"] .review-card.remind-mode .word-box{background:linear-gradient(180deg,#1E2544,#171D36) !important;border-color:#41518E !important}
+    [data-colormode="dark"] .review-card.remind-mode .word-badge{background:rgba(133,152,255,.18) !important;border-color:rgba(133,152,255,.22) !important;color:#C7D2FF !important}
     .review-title-shell{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:2px 4px 6px;padding:2px 2px 0}.review-head-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
     .review-head-main{min-width:0;flex:1}
     .review-head-main .mini{margin-bottom:4px}
@@ -270,7 +278,9 @@
     .review-toolbar{display:flex;justify-content:flex-end;align-items:center;gap:10px;margin-bottom:5px;position:relative;z-index:1}
     .tool-buttons{display:flex;gap:8px}.tool-btn{min-height:40px;border-radius:10px;border:1px solid var(--identity-soft);background:rgba(255,255,255,.94);font-size:14px;font-weight:900;color:var(--identity);padding:0 10px;box-shadow:var(--shadow-soft);transition:transform .15s ease, box-shadow .15s ease, filter .15s ease}.tool-btn.active{background:var(--identity-soft);color:var(--identity);border-color:var(--identity-soft-strong);box-shadow:var(--ring), var(--shadow-soft)}.tool-btn.primary{background:var(--primary);border-color:var(--primary);color:#fff}.tool-btn.icon{padding:0 14px;min-width:44px}.tool-btn.running{background:#e8fbf4;border-color:#9fe3bd;color:#0f8b6d}.tool-btn:disabled{opacity:.55;cursor:not-allowed}.auto-sheet-grid{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px}.auto-sheet-section{padding:12px 13px;border-radius:20px;background:#f7f9fc;border:1px solid #dfe7f6;box-shadow:0 8px 18px rgba(88,106,150,.07)}.auto-sheet-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.auto-sheet-title-block{flex:1;min-width:0}.auto-sheet-section-title{margin:0;font-size:15px;font-weight:900;color:#1f2a44;letter-spacing:-.01em}.auto-sheet-section-sub{font-size:13px;line-height:1.5;color:#667085;margin:4px 0 0}.auto-sheet-auto-box{margin-top:10px;padding:11px 12px;border-radius:16px;background:#ffffff;border:1px solid #e3eaf7;box-shadow:inset 0 1px 0 rgba(255,255,255,.88)}.auto-setting-stack{display:grid;grid-template-columns:1fr;gap:8px}.auto-field-row{display:grid;grid-template-columns:88px minmax(0,1fr) auto;align-items:center;gap:8px}.auto-field-row + .auto-field-row{margin-top:8px}.auto-sheet-label{font-size:14px;font-weight:900;color:#334155;white-space:nowrap}.auto-field-unit{font-size:13px;font-weight:900;color:#667085;white-space:nowrap}.auto-compact-input{height:40px;border-radius:12px;padding:0 12px}.auto-sheet-help{font-size:12px;line-height:1.55;color:#667085;margin-top:8px}.auto-inline-note{margin-top:10px;padding:10px 12px;border-radius:14px;background:#f8fafc;border:1px solid #e7edf5;font-size:12px;line-height:1.55;color:#667085}.auto-setting-row{display:flex;align-items:center;justify-content:space-between;gap:12px}.auto-setting-actions{display:flex;justify-content:flex-end;margin-top:8px}.modal-toggle-btn{min-height:36px;border-radius:12px;border:1px solid #dae5fb;background:rgba(255,255,255,.94);font-size:14px;font-weight:900;color:#334155;padding:0 13px;box-shadow:var(--shadow-soft);white-space:nowrap}.modal-toggle-btn.active{background:#eef3ff;color:#1d4ed8;border-color:#bfd2ff;box-shadow:var(--ring), var(--shadow-soft)}.auto-shuffle-popup{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.96);min-width:200px;max-width:calc(100% - 48px);padding:14px 18px;border-radius:20px;background:rgba(15,23,42,.94);color:#fff;font-size:14px;font-weight:900;text-align:center;box-shadow:0 18px 42px rgba(15,23,42,.28);opacity:0;pointer-events:none;transition:opacity .18s ease, transform .18s ease;z-index:6}.auto-shuffle-popup.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
     .word-box{border-radius:16px;background:#ffffff;border:1.5px solid #e6ebf5;padding:8px 8px 0px;min-height:0;overflow:hidden;position:relative;transition:border-color .18s ease, box-shadow .18s ease, background .18s ease, transform .18s ease;box-shadow:inset 0 1px 0 rgba(255,255,255,.9), 0 12px 24px rgba(88,106,150,.06)}
-    .word-box.selected-wrong{border-color:#fca5a5;box-shadow:0 0 0 4px rgba(239,68,68,.10);background:#fff8f8}.word-box.selected-normal{border-color:#fcd34d;box-shadow:0 0 0 4px rgba(245,158,11,.12);background:#fffdf7}.word-box.selected-perfect{border-color:#86efac;box-shadow:0 0 0 4px rgba(34,197,94,.12);background:#f7fff9}
+    .word-box.selected-wrong{border-color:#fca5a5 !important;box-shadow:0 0 0 4px rgba(239,68,68,.10), 0 16px 34px rgba(239,68,68,.10) !important;background:linear-gradient(180deg,#fff7f7 0%,#fff1f2 100%) !important}.word-box.selected-normal{border-color:#fcd34d !important;box-shadow:0 0 0 4px rgba(245,158,11,.12), 0 16px 34px rgba(245,158,11,.10) !important;background:linear-gradient(180deg,#fffdf5 0%,#fff7e6 100%) !important}.word-box.selected-perfect{border-color:#86efac !important;box-shadow:0 0 0 4px rgba(34,197,94,.12), 0 16px 34px rgba(34,197,94,.10) !important;background:linear-gradient(180deg,#f6fff8 0%,#ecfdf3 100%) !important}
+    .review-card.grade-selected-wrong{box-shadow:0 22px 48px rgba(239,68,68,.12), inset 0 1px 0 rgba(255,255,255,.96) !important;border-color:rgba(239,68,68,.28) !important}.review-card.grade-selected-normal{box-shadow:0 22px 48px rgba(245,158,11,.12), inset 0 1px 0 rgba(255,255,255,.96) !important;border-color:rgba(245,158,11,.28) !important}.review-card.grade-selected-perfect{box-shadow:0 22px 48px rgba(34,197,94,.12), inset 0 1px 0 rgba(255,255,255,.96) !important;border-color:rgba(34,197,94,.28) !important}
+    .word-box.selected-wrong #reviewWord,.word-box.selected-wrong #reviewSub{color:#b91c1c !important}.word-box.selected-normal #reviewWord,.word-box.selected-normal #reviewSub{color:#b45309 !important}.word-box.selected-perfect #reviewWord,.word-box.selected-perfect #reviewSub{color:#15803d !important}
     .word-badge{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:#eef3ff;color:#1d4ed8;font-size:13px;font-weight:900;border:1px solid #dbe5ff;box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}.word-main{font-size:35px;line-height:1.2;font-weight:900;letter-spacing:-.035em;margin:15px 0 9px}.word-sub{font-size:15px;color:var(--muted);line-height:1.65}
     .peek-wrap{margin-top:16px;padding:10px 0px;border-radius:20px}
     .peek-title{font-size:13px;color:var(--muted);font-weight:900;text-transform:uppercase;letter-spacing:.08em}
@@ -1499,7 +1509,68 @@ body:not(.edit-mode) .home-tabs .edit-mode-exit-btn{
   55%{opacity:1;transform:scale(1.018)}
   100%{opacity:0;transform:scale(1.055);filter:blur(10px)}
 }
-</style>
+
+    .app-confirm-message{font-size:15px;line-height:1.7;color:#334155;font-weight:800;margin-top:8px}
+    .app-confirm-note{margin-top:12px;padding:12px 13px;border-radius:16px;background:#f8fafc;border:1px solid var(--identity-soft);font-size:13px;line-height:1.65;color:#667085;font-weight:800}
+    .summary-hero{padding:14px 14px 12px;border-radius:20px;background:linear-gradient(180deg,#EEF1FF 0%,#F8FAFF 100%);border:1px solid rgba(92,106,196,.18);box-shadow:0 10px 24px rgba(92,106,196,.10)}
+    .summary-hero-title{font-size:16px;font-weight:900;color:#3646a0}
+    .summary-hero-sub{margin-top:5px;font-size:13px;line-height:1.6;color:#536179;font-weight:800}
+    .summary-pill-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+    .summary-pill{padding:12px 10px;border-radius:18px;text-align:center;border:1px solid #e5eaf2;background:#fff}
+    .summary-pill strong{display:block;font-size:19px;line-height:1.1;font-weight:900}
+    .summary-pill span{display:block;margin-top:6px;font-size:12px;font-weight:800;color:#667085}
+    .summary-pill.wrong{background:#fff5f5;border-color:#fecaca}
+    .summary-pill.wrong strong{color:#dc2626}
+    .summary-pill.normal{background:#fff9eb;border-color:#fde68a}
+    .summary-pill.normal strong{color:#d97706}
+    .summary-pill.perfect{background:#f3fff7;border-color:#bbf7d0}
+    .summary-pill.perfect strong{color:#16a34a}
+    .summary-weak-box{margin-top:14px;padding:14px;border-radius:20px;background:#f8fafc;border:1px solid var(--identity-soft)}
+    .summary-weak-title{font-size:14px;font-weight:900;color:var(--identity)}
+    .summary-weak-sub{margin-top:4px;font-size:12px;line-height:1.55;color:#7b8493;font-weight:800}
+    .summary-weak-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .summary-weak-chip{padding:9px 12px;border-radius:999px;background:#fff;border:1px solid #e2e8f0;font-size:13px;font-weight:900;color:#334155}
+    .summary-weak-empty{margin-top:12px;padding:12px;border-radius:14px;background:#fff;border:1px solid #e2e8f0;font-size:13px;line-height:1.6;color:#64748b;font-weight:800}
+    .review-card.remind-mode{background:linear-gradient(180deg,#E8EDFF 0%,#F7F9FF 100%) !important;border-color:rgba(92,106,196,.34) !important;box-shadow:0 18px 42px rgba(92,106,196,.18), inset 0 1px 0 rgba(255,255,255,.96), 0 0 0 3px rgba(92,106,196,.08) !important}
+    .review-card.remind-mode .review-head-meta{background:rgba(92,106,196,.08);border:1px solid rgba(92,106,196,.12);border-radius:18px;padding:10px 12px}
+    .review-card.remind-mode .word-box{background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(237,241,255,.98)) !important;border-color:rgba(92,106,196,.34) !important;box-shadow:0 14px 28px rgba(92,106,196,.12), inset 0 0 0 1px rgba(92,106,196,.06) !important}
+    .review-card.remind-mode .peek-wrap{background:rgba(255,255,255,.96) !important;border-color:rgba(92,106,196,.24) !important;box-shadow:0 10px 22px rgba(92,106,196,.08)}
+    .review-card.remind-mode .peek-content{background:linear-gradient(180deg,#ffffff 0%,#eef2ff 100%)}
+    .review-card.remind-mode .card-status-badge.active{background:#5C6AC4 !important;color:#fff !important;border-color:#5C6AC4 !important;box-shadow:0 10px 22px rgba(92,106,196,.24)}
+    .review-card.remind-mode #reviewSub{color:#40508f !important;font-weight:900}
+    .grade.active.g-red{border-color:#f87171 !important;background:#fff1f2 !important;color:#b91c1c !important;box-shadow:0 0 0 3px rgba(239,68,68,.12), var(--shadow-soft) !important}
+    .grade.active.g-amber{border-color:#f59e0b !important;background:#fffbeb !important;color:#b45309 !important;box-shadow:0 0 0 3px rgba(245,158,11,.12), var(--shadow-soft) !important}
+    .grade.active.g-green{border-color:#22c55e !important;background:#f0fdf4 !important;color:#15803d !important;box-shadow:0 0 0 3px rgba(34,197,94,.12), var(--shadow-soft) !important}
+    .grade.active{transform:translateY(-1px) scale(1.01)}
+    [data-colormode="dark"] .summary-hero{background:linear-gradient(180deg,#222a52 0%,#171d38 100%) !important;border-color:#425298 !important;box-shadow:0 14px 30px rgba(0,0,0,.32)}
+    [data-colormode="dark"] .summary-hero-title{color:#d8dfff !important}
+    [data-colormode="dark"] .summary-hero-sub{color:#bcc5ea !important}
+    [data-colormode="dark"] .summary-pill{background:#1A1E35 !important;border-color:#2A2F50 !important}
+    [data-colormode="dark"] .summary-pill.wrong{background:#35171d !important;border-color:#7f1d1d !important}
+    [data-colormode="dark"] .summary-pill.normal{background:#35280f !important;border-color:#92400e !important}
+    [data-colormode="dark"] .summary-pill.perfect{background:#102818 !important;border-color:#166534 !important}
+    [data-colormode="dark"] .summary-weak-box,[data-colormode="dark"] .app-confirm-note{background:#1A1E35 !important;border-color:#2A2F50 !important}
+    [data-colormode="dark"] .summary-weak-chip,[data-colormode="dark"] .summary-weak-empty{background:#14182a !important;border-color:#2A2F50 !important;color:#e5e7eb !important}
+    [data-colormode="dark"] .app-confirm-message{color:#E5E7EB !important}
+    [data-colormode="dark"] .review-card.remind-mode{background:linear-gradient(180deg,#21284d 0%,#151B34 100%) !important;border-color:#5164B8 !important;box-shadow:0 18px 42px rgba(0,0,0,.36), 0 0 0 3px rgba(92,106,196,.16) !important}
+    [data-colormode="dark"] .review-card.remind-mode .review-head-meta{background:rgba(92,106,196,.12) !important;border-color:rgba(120,138,229,.26) !important}
+    [data-colormode="dark"] .review-card.remind-mode .word-box{background:linear-gradient(180deg,#20284a,#171e37) !important;border-color:#5D73D1 !important;box-shadow:0 14px 28px rgba(0,0,0,.24), inset 0 0 0 1px rgba(120,138,229,.16) !important}
+    [data-colormode="dark"] .review-card.remind-mode .peek-wrap{background:#171d36 !important;border-color:#4c5fb0 !important}
+    [data-colormode="dark"] .review-card.remind-mode .peek-content{background:linear-gradient(180deg,#171d36 0%,#20284b 100%) !important}
+    [data-colormode="dark"] .grade.active.g-red{background:#3B1419 !important;border-color:#EF4444 !important;color:#FFE4E6 !important}
+    [data-colormode="dark"] .grade.active.g-amber{background:#3A2A0A !important;border-color:#F59E0B !important;color:#FEF3C7 !important}
+    [data-colormode="dark"] .grade.active.g-green{background:#0F2E20 !important;border-color:#22C55E !important;color:#DCFCE7 !important}
+    [data-colormode="dark"] .word-box.selected-wrong{background:linear-gradient(180deg,#35161b 0%,#2a1116 100%) !important;border-color:#ef4444 !important;box-shadow:0 0 0 4px rgba(239,68,68,.16), 0 16px 34px rgba(0,0,0,.24) !important}
+    [data-colormode="dark"] .word-box.selected-normal{background:linear-gradient(180deg,#3a2b0d 0%,#2c2109 100%) !important;border-color:#f59e0b !important;box-shadow:0 0 0 4px rgba(245,158,11,.16), 0 16px 34px rgba(0,0,0,.24) !important}
+    [data-colormode="dark"] .word-box.selected-perfect{background:linear-gradient(180deg,#103021 0%,#0c2519 100%) !important;border-color:#22c55e !important;box-shadow:0 0 0 4px rgba(34,197,94,.16), 0 16px 34px rgba(0,0,0,.24) !important}
+    [data-colormode="dark"] .review-card.grade-selected-wrong{border-color:rgba(239,68,68,.42) !important;box-shadow:0 22px 48px rgba(0,0,0,.34), 0 0 0 3px rgba(239,68,68,.14) !important}
+    [data-colormode="dark"] .review-card.grade-selected-normal{border-color:rgba(245,158,11,.42) !important;box-shadow:0 22px 48px rgba(0,0,0,.34), 0 0 0 3px rgba(245,158,11,.14) !important}
+    [data-colormode="dark"] .review-card.grade-selected-perfect{border-color:rgba(34,197,94,.42) !important;box-shadow:0 22px 48px rgba(0,0,0,.34), 0 0 0 3px rgba(34,197,94,.14) !important}
+    [data-colormode="dark"] .word-box.selected-wrong #reviewWord,[data-colormode="dark"] .word-box.selected-wrong #reviewSub{color:#fecdd3 !important}
+    [data-colormode="dark"] .word-box.selected-normal #reviewWord,[data-colormode="dark"] .word-box.selected-normal #reviewSub{color:#fde68a !important}
+    [data-colormode="dark"] .word-box.selected-perfect #reviewWord,[data-colormode="dark"] .word-box.selected-perfect #reviewSub{color:#bbf7d0 !important}
+
+  </style>
 </head>
 <body>
 
@@ -2280,6 +2351,44 @@ body:not(.edit-mode) .home-tabs .edit-mode-exit-btn{
         <div class="dialog-actions">
           <button class="btn secondary" id="autoTestModalCloseBtn">닫기</button>
           <button class="btn primary" id="autoTestSaveBtn">저장</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal-backdrop center" id="appConfirmModal" style="display:none">
+      <div class="dialog-card">
+        <div class="dialog-title" id="appConfirmTitle">확인</div>
+        <div class="app-confirm-message" id="appConfirmMessage">계속 진행할까요?</div>
+        <div class="app-confirm-note" id="appConfirmNote" style="display:none"></div>
+        <div class="dialog-actions">
+          <button class="btn secondary" id="appConfirmCancelBtn">취소</button>
+          <button class="btn primary" id="appConfirmOkBtn">확인</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-backdrop center" id="reviewSummaryModal" style="display:none">
+      <div class="dialog-card">
+        <div class="dialog-title" id="reviewSummaryTitle">이번 테스트 결과</div>
+        <div class="summary-hero">
+          <div class="summary-hero-title" id="reviewSummaryHeroTitle">테스트를 마쳤어요</div>
+          <div class="summary-hero-sub" id="reviewSummaryHeroSub">미흡/보통 카드를 정리한 뒤 다음 단계로 이어갈 수 있어요.</div>
+          <div class="summary-pill-row">
+            <div class="summary-pill wrong"><strong id="summaryWrongCount">0개</strong><span>미흡</span></div>
+            <div class="summary-pill normal"><strong id="summaryNormalCount">0개</strong><span>보통</span></div>
+            <div class="summary-pill perfect"><strong id="summaryPerfectCount">0개</strong><span>완벽</span></div>
+          </div>
+        </div>
+        <div class="summary-weak-box">
+          <div class="summary-weak-title" id="summaryWeakTitle">미흡/보통 정리</div>
+          <div class="summary-weak-sub" id="summaryWeakSub">다시 볼 카드만 모아뒀어요.</div>
+          <div class="summary-weak-list" id="summaryWeakList"></div>
+          <div class="summary-weak-empty" id="summaryWeakEmpty" style="display:none">이번에는 다시 볼 카드가 없어요. 바로 다음 단계로 넘어갈 수 있어요.</div>
+        </div>
+        <div class="dialog-actions">
+          <button class="btn secondary" id="reviewSummarySecondaryBtn">오늘은 여기까지</button>
+          <button class="btn primary" id="reviewSummaryPrimaryBtn">리마인드 시작</button>
         </div>
       </div>
     </div>
@@ -3420,6 +3529,151 @@ luggage claim\t수하물 찾는 곳`, '준호')
     startReview('all');
   }
 
+  function reviewResultSummary(cards){
+    const pool = Array.isArray(cards) ? cards.filter(Boolean) : [];
+    const summary = {wrong:0, normal:0, perfect:0, weakCards:[]};
+    pool.forEach(card => {
+      const result = card?.lastResult;
+      if(result === '미흡'){ summary.wrong += 1; summary.weakCards.push(card); }
+      else if(result === '보통'){ summary.normal += 1; summary.weakCards.push(card); }
+      else if(result === '완벽'){ summary.perfect += 1; }
+    });
+    return summary;
+  }
+
+  function formatReviewSummaryPrompt(summary, heading, weakHeading){
+    const lines = [
+      heading || '이번 테스트 결과',
+      `미흡 ${summary.wrong}개 · 보통 ${summary.normal}개 · 완벽 ${summary.perfect}개`
+    ];
+    if(summary.weakCards.length){
+      const preview = summary.weakCards.slice(0, 8).map(card => `• ${card.word}`).join('\n');
+      lines.push('', weakHeading || '다시 확인할 카드', preview);
+      if(summary.weakCards.length > 8) lines.push(`외 ${summary.weakCards.length - 8}개`);
+    }
+    return lines.join('\n');
+  }
+
+
+  let appConfirmHandlers = {onConfirm:null, onCancel:null};
+  let reviewSummaryHandlers = {onPrimary:null, onSecondary:null};
+
+  function openAppConfirmModal(options = {}){
+    const modal = $('appConfirmModal');
+    if(!modal) return;
+    $('appConfirmTitle').textContent = options.title || '확인';
+    $('appConfirmMessage').textContent = options.message || '계속 진행할까요?';
+    const noteEl = $('appConfirmNote');
+    if(noteEl){
+      if(options.note){
+        noteEl.style.display = 'block';
+        noteEl.textContent = options.note;
+      } else {
+        noteEl.style.display = 'none';
+        noteEl.textContent = '';
+      }
+    }
+    $('appConfirmCancelBtn').textContent = options.cancelText || '취소';
+    $('appConfirmOkBtn').textContent = options.confirmText || '확인';
+    appConfirmHandlers.onConfirm = typeof options.onConfirm === 'function' ? options.onConfirm : null;
+    appConfirmHandlers.onCancel = typeof options.onCancel === 'function' ? options.onCancel : null;
+    modal.style.display = 'flex';
+    requestAnimationFrame(() => modal.classList.add('show'));
+  }
+
+  function closeAppConfirmModal(runCancel = false){
+    const modal = $('appConfirmModal');
+    if(!modal) return;
+    modal.classList.remove('show');
+    setTimeout(() => { modal.style.display = 'none'; }, 160);
+    const cancelFn = appConfirmHandlers.onCancel;
+    appConfirmHandlers = {onConfirm:null, onCancel:null};
+    if(runCancel && cancelFn) cancelFn();
+  }
+
+  function openReviewSummaryModal(options = {}){
+    const modal = $('reviewSummaryModal');
+    if(!modal) return;
+    const summary = options.summary || {wrong:0, normal:0, perfect:0, weakCards:[]};
+    $('reviewSummaryTitle').textContent = options.title || '이번 테스트 결과';
+    $('reviewSummaryHeroTitle').textContent = options.heroTitle || '테스트를 마쳤어요';
+    $('reviewSummaryHeroSub').textContent = options.heroSub || '미흡/보통 카드를 정리한 뒤 다음 단계로 이어갈 수 있어요.';
+    $('summaryWrongCount').textContent = `${summary.wrong || 0}개`;
+    $('summaryNormalCount').textContent = `${summary.normal || 0}개`;
+    $('summaryPerfectCount').textContent = `${summary.perfect || 0}개`;
+    $('summaryWeakTitle').textContent = options.weakTitle || '미흡/보통 정리';
+    $('summaryWeakSub').textContent = options.weakSub || '다시 볼 카드만 모아뒀어요.';
+    const listEl = $('summaryWeakList');
+    const emptyEl = $('summaryWeakEmpty');
+    const weakCards = Array.isArray(summary.weakCards) ? summary.weakCards : [];
+    if(listEl){
+      listEl.innerHTML = weakCards.slice(0, 16).map(card => `<div class="summary-weak-chip">${escapeHtml(card.word)}</div>`).join('');
+    }
+    if(emptyEl){
+      emptyEl.style.display = weakCards.length ? 'none' : 'block';
+      emptyEl.textContent = options.emptyText || '이번에는 다시 볼 카드가 없어요. 바로 다음 단계로 넘어갈 수 있어요.';
+    }
+    $('reviewSummarySecondaryBtn').textContent = options.secondaryText || '오늘은 여기까지';
+    $('reviewSummaryPrimaryBtn').textContent = options.primaryText || '리마인드 시작';
+    $('reviewSummaryPrimaryBtn').style.display = options.hidePrimary ? 'none' : '';
+    reviewSummaryHandlers.onPrimary = typeof options.onPrimary === 'function' ? options.onPrimary : null;
+    reviewSummaryHandlers.onSecondary = typeof options.onSecondary === 'function' ? options.onSecondary : null;
+    modal.style.display = 'flex';
+    requestAnimationFrame(() => modal.classList.add('show'));
+  }
+
+  function closeReviewSummaryModal(){
+    const modal = $('reviewSummaryModal');
+    if(!modal) return;
+    modal.classList.remove('show');
+    setTimeout(() => { modal.style.display = 'none'; }, 160);
+  }
+
+
+  function continueSessionStudy(note){
+    if(!note){ showToast('노트를 먼저 선택해 주세요.'); return; }
+    const flow = ensureSessionFlow(note);
+    state.activeNoteId = note.id;
+    if(flow.state === 'prewrite'){
+      const sessionCards = getSessionFlowCards(note);
+      if(sessionCards.length){
+        openScopedWriteMode(note, {mode:'session-prewrite', cards:sessionCards, limit:Math.max(1, Math.ceil(sessionCards.length / getSeasonPackSize(note)))});
+        return;
+      }
+    }
+    startSession(note);
+  }
+
+  function startDailyRemindTesting(note, mission, weakCards){
+    if(!note){ showToast('노트를 먼저 선택해 주세요.'); return; }
+    const pool = Array.isArray(weakCards) ? weakCards.filter(Boolean) : [];
+    if(!pool.length){
+      const daily = dailyStudyForNote(note);
+      daily.lastCompletedDate = todayKey();
+      daily.startedDate = '';
+      daily.phase = 'idle';
+      collapseDailyStudyPanels(note.id);
+      daily.expanded = true;
+      const finishedDay = mission?.day || daily.day;
+      daily.day = Math.min(7, finishedDay + 1);
+      save();
+      renderAll();
+      switchScreen('home');
+      showToast(`일일학습 ${finishedDay}일차 완료`);
+      return;
+    }
+    startReviewSession(pool, {
+      mode:'daily-remind',
+      noteId: note.id,
+      totalPacks: Math.max(1, Math.ceil(pool.length / getSeasonPackSize(note))),
+      phaseLabel:`일일학습 · 리마인드 테스트 ${mission?.day || dailyStudyForNote(note).day}일차`,
+      returnScreen:'home',
+      uiMode:'eval',
+      countAsTest:false,
+      dailyMission:{phase:'remind', day: mission?.day || dailyStudyForNote(note).day, limit: mission?.limit || 1}
+    });
+  }
+
 
   /* ===== 세션(Session) 시스템 ===== */
 
@@ -3463,16 +3717,17 @@ luggage claim\t수하물 찾는 곳`, '준호')
     const labels = labelMap[state] || labelMap.idle;
     const classes = classMap[state] || classMap.idle;
     return [
-      {title:'1. 미리 써보기', status:labels[0], cls:classes[0]},
+      {title:'1. 직접 써보기', status:labels[0], cls:classes[0]},
       {title:'2. 테스트', status:labels[1], cls:classes[1]},
-      {title:'3. 다시 복기하기', status:labels[2], cls:classes[2]}
+      {title:'3. 리마인드', status:labels[2], cls:classes[2]}
     ];
   }
 
   function sessionStartButtonLabel(note){
     const state = sessionFlowState(note);
     if(state === 'done') return '학습 완료';
-    if(state === 'testReady' || state === 'reviewReady') return '이어서 학습';
+    if(state === 'reviewReady') return '리마인드 시작';
+    if(state === 'testReady') return '테스트 시작';
     if(state === 'testing' || state === 'reviewing') return '진행 중';
     return '학습 시작';
   }
@@ -3568,19 +3823,59 @@ luggage claim\t수하물 찾는 곳`, '준호')
     const flow = ensureSessionFlow(note);
     state.activeNoteId = note.id;
     if(flow.state === 'done'){
-      showToast('현재 세션 학습은 이미 완료됐어요. 새로 학습하려면 다음 세션을 시작해 주세요.');
+      openAppConfirmModal({
+        title:'반복 학습 시작',
+        message:'반복해서 학습을 시작하시겠습니까?',
+        note:'일일학습 체크리스트 완료 상태는 그대로 유지되고, 같은 시즌 안에서 다시 한 번 테스트를 반복합니다.',
+        confirmText:'반복 시작',
+        onConfirm:() => {
+          closeAppConfirmModal();
+          resetSessionFlow(note);
+          save();
+          renderAll();
+          startSession(note);
+        }
+      });
       return;
     }
     if(flow.state === 'testReady'){
-      beginSessionTest(note);
+      openAppConfirmModal({
+        title:'학습 이어서 시작',
+        message:'학습을 이어서 시작하시겠습니까?',
+        note:'직접 써보기를 마친 상태예요. 이어서 테스트부터 시작합니다.',
+        confirmText:'이어서 시작',
+        onConfirm:() => {
+          closeAppConfirmModal();
+          beginSessionTest(note);
+        }
+      });
       return;
     }
     if(flow.state === 'reviewReady'){
-      beginSessionReview(note);
+      openAppConfirmModal({
+        title:'학습 이어서 시작',
+        message:'학습을 이어서 시작하시겠습니까?',
+        note:'이전 테스트 결과의 미흡/보통 카드를 대상으로 리마인드 테스트를 이어갑니다.',
+        confirmText:'이어서 시작',
+        onConfirm:() => {
+          closeAppConfirmModal();
+          beginSessionReview(note);
+        }
+      });
       return;
     }
     if(flow.state === 'testing' || flow.state === 'reviewing'){
-      showToast('현재 학습이 이미 진행 중입니다. 이어서 완료해 주세요.');
+      openAppConfirmModal({
+        title:'학습 이어서 시작',
+        message:'학습을 이어서 시작하시겠습니까?',
+        note: flow.state === 'reviewing' ? '리마인드 테스트가 진행 중인 상태예요. 이어서 약점 카드부터 다시 확인합니다.' : '진행 중인 테스트가 있어요. 이어서 현재 세션의 남은 카드를 확인합니다.',
+        confirmText:'이어서 시작',
+        onConfirm:() => {
+          closeAppConfirmModal();
+          if(flow.state === 'reviewing') beginSessionReview(note);
+          else beginSessionTest(note);
+        }
+      });
       return;
     }
     const pool = buildSessionPool(note);
@@ -3650,7 +3945,7 @@ luggage claim\t수하물 찾는 곳`, '준호')
       mode:'session-review',
       noteId: note.id,
       totalPacks: Math.max(1, Math.ceil(pool.length / getSeasonPackSize(note))),
-      phaseLabel: `세션 ${note.season?.sessionCount || 1} · S${note.season?.current || 1} · 다시 복기`,
+      phaseLabel: `세션 ${note.season?.sessionCount || 1} · S${note.season?.current || 1} · 리마인드 테스트`,
       returnScreen:'home',
       uiMode:'eval',
       countAsTest:true
@@ -3881,11 +4176,11 @@ luggage claim\t수하물 찾는 곳`, '준호')
     const titleEl = document.querySelector('#writeModeModal .sheet-title');
     const subEl = document.querySelector('#writeModeModal .sheet-sub');
     const tipEl = document.querySelector('#writeModeModal .write-tip');
-    if(titleEl) titleEl.textContent = isDailyBrain ? `일일학습 ${currentWriteScope.day}일차 · 직접 써보기` : (isSessionPrewrite ? '미리 써보기' : '직접 써보기');
+    if(titleEl) titleEl.textContent = isDailyBrain ? `일일학습 ${currentWriteScope.day}일차 · 직접 써보기` : (isSessionPrewrite ? '세션 · 직접 써보기' : '직접 써보기');
     if(subEl) subEl.textContent = isDailyBrain
       ? `${currentWriteScope.day}일차 분량으로 잡힌 카드만 모았습니다. 왼쪽 단어를 보고 직접 떠올리며 써본 뒤 닫으면 바로 테스팅으로 이어집니다.`
       : (isSessionPrewrite
-        ? '오늘 학습 분량을 먼저 훑어보는 단계예요. 직접 써보거나 가볍게 떠올린 뒤 닫으면 바로 테스트를 이어서 진행할 수 있어요.'
+        ? '오늘 학습 분량을 먼저 직접 써보는 단계예요. 완벽을 제외한 카드까지 확인한 뒤 닫으면 바로 테스트를 이어서 진행할 수 있어요.'
         : '암기 완료된 카드는 제외하고, 아직 남아 있는 항목만 스크롤로 모아봤어요. 왼쪽 단어를 보고 오른쪽 뜻을 떠올리며 오프라인으로 직접 써보세요.');
     if(tipEl) tipEl.textContent = isDailyBrain
       ? `${currentWriteScope.limit || 1}개 카드팩 분량${currentWriteScope.excludePerfect ? ' · 완벽 카드는 자동 제외' : ''}만 보여줍니다.`
@@ -3934,7 +4229,7 @@ luggage claim\t수하물 찾는 곳`, '준호')
         flow.state = 'testReady';
         save();
         renderAll();
-        if(confirm('테스트를 진행하시겠습니까?')){
+        if(confirm('직접 써보기를 마쳤습니다. 바로 테스트를 진행할까요?')){
           beginSessionTest(note);
         } else {
           showToast('미리 써보기는 완료됐어요. 다음에는 테스트부터 이어서 진행하면 됩니다.');
@@ -4235,7 +4530,7 @@ luggage claim\t수하물 찾는 곳`, '준호')
               ${stepMeta.map(step => `<div class="session-flow-step ${step.cls}"><span class="k">${step.title}</span><span class="v">${step.status}</span></div>`).join('')}
             </div>
             <div class="session-study-actions">
-              <button class="mini-btn" data-session-start="${note.id}">${sessionCta}</button>
+              <button class="mini-btn" data-session-start="${note.id}">학습 시작</button>
               <button class="mini-btn" data-session-write="${note.id}">직접 써보기</button>
             </div>
           </div>`;
@@ -4265,6 +4560,13 @@ luggage claim\t수하물 찾는 곳`, '준호')
       state.activeNoteId = note.id;
       startSession(note);
     }));
+    wrap.querySelectorAll('[data-session-continue]').forEach(btn => btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const note = state.notes.find(n => n.id === btn.dataset.sessionContinue);
+      if(!note){ showToast('노트를 찾지 못했습니다.'); return; }
+      state.activeNoteId = note.id;
+      continueSessionStudy(note);
+    }));
     wrap.querySelectorAll('[data-session-write]').forEach(btn => btn.addEventListener('click', (e) => {
       e.stopPropagation();
       const note = state.notes.find(n => n.id === btn.dataset.sessionWrite);
@@ -4273,7 +4575,8 @@ luggage claim\t수하물 찾는 곳`, '준호')
       const flow = ensureSessionFlow(note);
       const sessionCards = getSessionFlowCards(note);
       if(isSeasonActive(note) && sessionCards.length && flow.state !== 'done'){
-        openScopedWriteMode(note, {mode:'session-prewrite', cards:sessionCards, limit:Math.max(1, Math.ceil(sessionCards.length / getSeasonPackSize(note)))});
+        const scopedCards = (flow.state === 'reviewReady' || flow.state === 'reviewing') ? getSessionReviewCards(note) : sessionCards;
+        openScopedWriteMode(note, {mode:'session-prewrite', cards:scopedCards, limit:Math.max(1, Math.ceil(Math.max(1, scopedCards.length) / getSeasonPackSize(note)))});
       } else {
         openScopedWriteMode(note, {mode:'default'});
       }
@@ -5015,12 +5318,17 @@ luggage claim\t수하물 찾는 곳`, '준호')
     $("reviewIdx").textContent = `${reviewIndex + 1} / ${reviewQueue.length}`;
     $("reviewHeadTitle").textContent = currentReviewScope.phaseLabel || (reviewNote ? (reviewNote.name || "노트") : "노트");
     $("reviewPackProgress").textContent = `${currentPack}팩 / ${totalPacks}팩 · ${itemInPack} / ${currentPackCount}`;
-    $("reviewBadge").innerHTML = `<span class="card-status-badge ${cardStatusClass(card)}">${cardStatusLabel(card)}</span> ${escapeHtml(stageText(card))}`;
+    const isRemindMode = currentReviewScope.mode === 'session-review' || currentReviewScope.mode === 'daily-remind';
+    const reviewCardEl = document.querySelector('#screen-review .review-card');
+    if(reviewCardEl) reviewCardEl.classList.toggle('remind-mode', isRemindMode);
+    $("reviewBadge").innerHTML = `${isRemindMode ? '<span class="card-status-badge active">리마인드</span> ' : ''}<span class="card-status-badge ${cardStatusClass(card)}">${cardStatusLabel(card)}</span> ${escapeHtml(stageText(card))}`;
     $("reviewWord").textContent = reversed ? card.meaning : card.word;
     const isEval = isEvalReviewMode();
-    $("reviewSub").textContent = currentReviewScope.mode === 'session'
-      ? `세션 학습 · 단어를 보고 뜻을 떠올리며 ${isEval ? '평가까지 진행하세요.' : '가볍게 확인하세요.'}`
-      : (reversed ? `반대 모드 · 뜻을 보고 단어를 떠올리세요.${isEval ? ' 평가도 함께 기록할 수 있어요.' : ''}` : `기본 모드 · 단어를 보고 뜻을 떠올리세요.${isEval ? ' 평가도 함께 기록할 수 있어요.' : ''}`);
+    $("reviewSub").textContent = isRemindMode
+      ? `리마인드 테스트 · 미흡/보통 중심으로 다시 확인합니다.${isEval ? ' 이번에는 더 강하게 체크해 보세요.' : ''}`
+      : (currentReviewScope.mode === 'session'
+        ? `세션 학습 · 단어를 보고 뜻을 떠올리며 ${isEval ? '평가까지 진행하세요.' : '가볍게 확인하세요.'}`
+        : (reversed ? `반대 모드 · 뜻을 보고 단어를 떠올리세요.${isEval ? ' 평가도 함께 기록할 수 있어요.' : ''}` : `기본 모드 · 단어를 보고 뜻을 떠올리세요.${isEval ? ' 평가도 함께 기록할 수 있어요.' : ''}`));
     $("peekLabel").textContent = '손으로 밀어서 확인하기';
     $("peekText").textContent = reversed ? card.word : card.meaning;
     const pDates = new Set(card.perfectDates||[]).size;
@@ -5164,9 +5472,12 @@ luggage claim\t수하물 찾는 곳`, '준호')
   function syncReviewSelectionUI(){
     const selected = reviewSelections[reviewIndex];
     const box = $("reviewWordBox");
-    box.classList.remove('selected-wrong','selected-normal','selected-perfect');
+    const reviewCard = document.querySelector('#screen-review .review-card');
+    if(box) box.classList.remove('selected-wrong','selected-normal','selected-perfect');
+    if(reviewCard) reviewCard.classList.remove('grade-selected-wrong','grade-selected-normal','grade-selected-perfect');
     document.querySelectorAll('[data-review-grade]').forEach(btn => { btn.classList.toggle('active', btn.dataset.reviewGrade === selected); });
-    if(selected) box.classList.add(`selected-${selected}`);
+    if(selected && box) box.classList.add(`selected-${selected}`);
+    if(selected && reviewCard) reviewCard.classList.add(`grade-selected-${selected}`);
     const nextBtn = $("reviewNextBtn");
     const isEval = isEvalReviewMode();
     const phase2Active = $('recallPhase2')?.classList.contains('active');
@@ -5231,7 +5542,24 @@ luggage claim\t수하물 찾는 곳`, '준호')
         return;
       }
       if(mission.phase === 'test'){
-        daily.lastCompletedDate = todayKey();
+        const summary = reviewResultSummary(reviewQueue);
+        save();
+        renderAll();
+        openReviewSummaryModal({
+          title:'이번 테스트 결과',
+          heroTitle:`일일학습 ${mission.day}일차 테스트를 마쳤어요`,
+          heroSub: summary.weakCards.length ? '미흡/보통 카드를 다시 정리한 뒤 리마인드 테스트로 이어갈 수 있어요.' : '완벽하게 정리됐어요. 오늘 분량을 그대로 마무리할 수 있어요.',
+          summary,
+          primaryText:'리마인드 시작',
+          secondaryText:'오늘 분량 마무리',
+          hidePrimary: !summary.weakCards.length,
+          onPrimary:() => {
+            closeReviewSummaryModal();
+            startDailyRemindTesting(note, mission, summary.weakCards);
+          },
+          onSecondary:() => {
+            closeReviewSummaryModal();
+            daily.lastCompletedDate = todayKey();
         daily.startedDate = '';
         daily.phase = 'idle';
         collapseDailyStudyPanels(note.id);
@@ -5243,6 +5571,30 @@ luggage claim\t수하물 찾는 곳`, '준호')
           daily.loopCount = (daily.loopCount || 0) + 1;
           daily.day = 1;
           extra = ` · 7일차 리마인드 완료(${archived}개 정리)`;
+        } else {
+          daily.day = Math.min(7, finishedDay + 1);
+        }
+            save();
+            renderAll();
+            switchScreen('home');
+            showToast(`일일학습 ${finishedDay}일차 완료${extra}`);
+          }
+        });
+        return;
+      }
+      if(mission.phase === 'remind'){
+        daily.lastCompletedDate = todayKey();
+        daily.startedDate = '';
+        daily.phase = 'idle';
+        collapseDailyStudyPanels(note.id);
+        daily.expanded = true;
+        const finishedDay = mission.day;
+        let extra = ' · 리마인드 테스트 완료';
+        if(finishedDay >= 7){
+          const archived = runDailyRemindStep(note);
+          daily.loopCount = (daily.loopCount || 0) + 1;
+          daily.day = 1;
+          extra += ` · 7일차 리마인드 정리(${archived}개)`;
         } else {
           daily.day = Math.min(7, finishedDay + 1);
         }
@@ -5261,14 +5613,34 @@ luggage claim\t수하물 찾는 곳`, '준호')
       const flow = ensureSessionFlow(reviewNote2);
       if(currentReviewScope.mode === 'session'){
         flow.state = 'reviewReady';
+        const summary = reviewResultSummary(reviewQueue);
         save();
         renderAll();
         switchScreen('home');
-        if(confirm('다시 복기하시겠습니까?')){
-          beginSessionReview(reviewNote2);
-        } else {
-          showToast('테스트는 완료됐어요. 다음에는 다시 복기하기부터 이어서 진행하면 됩니다.');
-        }
+        openReviewSummaryModal({
+          title:'이번 테스트 결과',
+          heroTitle:`세션 ${reviewNote2.season?.sessionCount || 1} 테스트를 마쳤어요`,
+          heroSub: summary.weakCards.length ? '미흡/보통 카드만 다시 정리해서 리마인드 테스트로 이어갈 수 있어요.' : '약점 카드가 없어서 이번 세션을 바로 완료할 수 있어요.',
+          summary,
+          primaryText:'리마인드 시작',
+          secondaryText: summary.weakCards.length ? '나중에 이어서' : '세션 완료',
+          hidePrimary: !summary.weakCards.length,
+          onPrimary:() => {
+            closeReviewSummaryModal();
+            beginSessionReview(reviewNote2);
+          },
+          onSecondary:() => {
+            closeReviewSummaryModal();
+            if(summary.weakCards.length){
+              showToast('테스트 결과는 저장됐어요. 다음에는 학습 시작을 눌러 리마인드 테스트부터 이어갈 수 있어요.');
+            } else {
+              markSessionDone(reviewNote2);
+              save();
+              renderAll();
+              showToast('이번 학습이 모두 완료됐어요. 약점 카드가 없어 바로 종료했어요.');
+            }
+          }
+        });
         return;
       }
       if(currentReviewScope.mode === 'session-review'){
@@ -6945,6 +7317,29 @@ function renderAll(){ renderHome(); renderNote(); renderProfile(); renderRest();
   $("fullToggleBtn").addEventListener('click', () => { state.settings.fullReveal = !state.settings.fullReveal; setRevealState(); if(!state.settings.fullReveal) resetPeekDrag(); syncReviewSelectionUI(); save(); });
   $("autoTestToggleBtn").addEventListener('click', toggleAutoTest);
   $("autoTestConfigBtn").addEventListener('click', openAutoTestModal);
+
+  if($('appConfirmCancelBtn')) $('appConfirmCancelBtn').addEventListener('click', () => closeAppConfirmModal(true));
+  if($('appConfirmOkBtn')) $('appConfirmOkBtn').addEventListener('click', () => {
+    const fn = appConfirmHandlers.onConfirm;
+    if(fn) fn();
+    else closeAppConfirmModal();
+  });
+  if($('appConfirmModal')) $('appConfirmModal').addEventListener('click', (e) => {
+    if(e.target === $('appConfirmModal')) closeAppConfirmModal(true);
+  });
+  if($('reviewSummarySecondaryBtn')) $('reviewSummarySecondaryBtn').addEventListener('click', () => {
+    const fn = reviewSummaryHandlers.onSecondary;
+    if(fn) fn();
+    else closeReviewSummaryModal();
+  });
+  if($('reviewSummaryPrimaryBtn')) $('reviewSummaryPrimaryBtn').addEventListener('click', () => {
+    const fn = reviewSummaryHandlers.onPrimary;
+    if(fn) fn();
+    else closeReviewSummaryModal();
+  });
+  if($('reviewSummaryModal')) $('reviewSummaryModal').addEventListener('click', (e) => {
+    if(e.target === $('reviewSummaryModal')) closeReviewSummaryModal();
+  });
   $("modalReverseBtn").addEventListener('click', toggleReverseSetting);
   $("modalShuffleBtn").addEventListener('click', () => {
     const hasCards = reviewQueue.length > 0;
